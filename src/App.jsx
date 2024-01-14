@@ -1,28 +1,32 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import { fetchData } from './api/common'
+import { Rain } from 'react-rainfall'
 
 function App() {
-  const [data, setData] = useState(null)
+  // const [data, setData] = useState(null)
   // const iframeRef = useRef(null)
-  useEffect(() => {
-    if (!data) {
-      fetchData().then(d => {
-        setData(d)
-      })
-    }
-  }, [data])
-  const vikingData = data?.teams?.find?.(d => d?.id === 7)
+  // useEffect(() => {
+  //   if (!data) {
+  //     fetchData().then(d => {
+  //       setData(d)
+  //     })
+  //   }
+  // }, [data])
+  // const vikingData = data?.teams?.find?.(d => d?.id === 7)
   return (
-    <>
+    <> 
+    <div style={{position: 'fixed', inset: 0}}>
+      <Rain />
+    </div>
       <h1 style={{userSelect: 'none'}}>
-        {(vikingData?.place === 1) ? 'Yes sir!': 'Not yet...' }
+        Nope 🥲
       </h1>
-      { vikingData &&
+      {/* { vikingData &&
         <p style={{ userSelect: 'none' }}>
           {vikingData?.name} Placement: {vikingData?.place}
         </p>
-      }
+      } */}
     </>
   )
 }
