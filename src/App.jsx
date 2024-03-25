@@ -20,7 +20,7 @@ function App() {
       <Rain />
     </div>
       <h1 style={{userSelect: 'none'}}>
-        {(+vikingData?.place === 1) ? 'letsgoooo' : 'Nope 🥲'}
+        {(vikingData?.played > 0 && +vikingData?.place === 1) ? 'letsgoooo' : 'Nope 🥲'}
       </h1>
       { vikingData &&
         <p style={{ userSelect: 'none' }}>
