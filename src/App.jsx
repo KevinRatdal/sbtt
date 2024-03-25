@@ -5,7 +5,7 @@ import { Rain } from 'react-rainfall'
 
 function App() {
   const [data, setData] = useState(null)
-  const iframeRef = useRef(null)
+  // const iframeRef = useRef(null)
   useEffect(() => {
     if (!data) {
       fetchData().then(d => {
@@ -20,7 +20,7 @@ function App() {
       <Rain />
     </div>
       <h1 style={{userSelect: 'none'}}>
-        {+vikingData?.place === 1 ?'letsgoooo' : 'Nope 🥲'}
+        {(+vikingData?.place === 1) ? 'letsgoooo' : 'Nope 🥲'}
       </h1>
       { vikingData &&
         <p style={{ userSelect: 'none' }}>
